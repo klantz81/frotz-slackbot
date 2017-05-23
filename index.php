@@ -54,6 +54,8 @@ $botman->hears('{cmd}', function($bot, $cmd) {
         if (stristr($cmd, BOT_ID) === FALSE)
                 return;
 
+        $cmd = trim(str_replace(BOT_ID, "", $cmd));
+
 
         $data = $bot->channelStorage()->get();
 
